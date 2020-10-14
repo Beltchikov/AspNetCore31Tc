@@ -6,6 +6,13 @@
     <title>@ViewData["Title"] - AspNetCore31Tc</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
+    @*https://codeseven.github.io/toastr/*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    @*https://datatables.net/*@
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+
+
 </head>
 <body>
     <header>
@@ -44,6 +51,16 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @*https://sweetalert2.github.io/*@
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    @*https://codeseven.github.io/toastr/*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    @*https://datatables.net/*@
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+
 
     @RenderSection("Scripts", required: false)
 </body>
