@@ -25,6 +25,7 @@ namespace AspNetCore31Tc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(o => o.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
@@ -51,6 +52,7 @@ namespace AspNetCore31Tc
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
         }

@@ -57,45 +57,71 @@
     </div>
 
     @*<div class="col-12">
-        <table id="table_id" class="display">
+            <table id="table_id" class="display">
+                <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Row 1 Data 1</td>
+                        <td>Row 1 Data 2</td>
+                    </tr>
+                    <tr>
+                        <td>Row 2 Data 1</td>
+                        <td>Row 2 Data 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>*@
+
+    <div class="col-12 border p-3 mt-3">
+
+        <table id="DT_load" class="table table-striped border" style="width:100%">
             <thead>
                 <tr>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Author
+                    </th>
+                    <th>
+                        ISBN
+                    </th>
+                    <th>
+
+                    </th>
                 </tr>
+
             </thead>
-            <tbody>
-                <tr>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
-                </tr>
-                <tr>
-                    <td>Row 2 Data 1</td>
-                    <td>Row 2 Data 2</td>
-                </tr>
-            </tbody>
         </table>
-    </div>*@
+
+    </div>
 
 </div>
 
 @section Scripts{
-    
-       <script>
-           $(document).ready(function () {
 
-               //Swal.fire({
-               //    title: 'Error!',
-               //    text: 'Do you want to continue',
-               //    icon: 'error',
-               //    confirmButtonText: 'Cool'
-               //})
+    <script src="~/js/bookList.js"></script>
 
-               //toastr.info('Are you the 6 fingered man?');
+    <script>
+        $(document).ready(function () {
 
-               //$('#table_id').DataTable();
-           });
-       </script>
+            //Swal.fire({
+            //    title: 'Error!',
+            //    text: 'Do you want to continue',
+            //    icon: 'error',
+            //    confirmButtonText: 'Cool'
+            //})
 
- 
+            //toastr.info('Are you the 6 fingered man?');
+
+            //$('#table_id').DataTable();
+        });
+    </script>
+
+
 }
