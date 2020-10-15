@@ -21,14 +21,21 @@ namespace AspNetCore31Tc.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
-            return await Task.Run(() => Json(new { data = _db.Book.ToListAsync() }));
+            return Json(new { data = await _db.Book.ToListAsync() });
         }
 
-        //public IActionResult GetAllAsync()
-        //{
-        //    return Json(new { data = _db.Book.ToList() });
-        //}
+        [HttpDelete]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            var bookFromDb = await _db.Book.FirstOrDefaultAsync(b => b.Id == id);
+            if (bookFromDb == null)
+            {
+                return Json(new { success = false, message = "Errror while deletenig" });
+            }
 
-
+            _db.Book.Remove(bookFromDb);
+            await _db.SaveChangesAsync();
+            return Json(new { success = true, message = "Book has been deleted" });
+        }
     }
 }
