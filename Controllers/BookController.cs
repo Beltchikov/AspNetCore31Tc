@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCore31Tc.Controllers
 {
@@ -18,9 +19,16 @@ namespace AspNetCore31Tc.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAllAsync()
         {
-            return Json(new { data = _db.Book.ToList()});
+            return await Task.Run(() => Json(new { data = _db.Book.ToListAsync() }));
         }
+
+        //public IActionResult GetAllAsync()
+        //{
+        //    return Json(new { data = _db.Book.ToList() });
+        //}
+
+
     }
 }
