@@ -19,9 +19,10 @@ function loadDataTable() {
                     { data: "name", width: "20%" },
                     { data: "author", width: "20%" },
                     { data: "isbn", width: "20%" },
-                    {data: "id",
-                    render: function (data) {
-                        return `<div class="text-center">
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return `<div class="text-center">
 <a href="BookList/Edit?id=${data}" class="btn btn-success text-white" style="cursor:pointer; width:70px;"  >  
 Edit
 </a>
@@ -30,14 +31,13 @@ Edit
 Delete
 </a>
 </div>`
-                    },
-                    width: "20%"}],
+                        },
+                        width: "20%"
+                    }],
                 language: {
-                "emptyTable": "no data found"
-            },
+                    "emptyTable": "no data found"
+                },
                 width: "100%"
             });
-});
-
-    
+        });
 }
